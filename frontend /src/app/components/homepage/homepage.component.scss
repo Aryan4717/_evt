@@ -1,0 +1,29 @@
+#homepage {
+    width: 100vw;
+    height: auto;
+    padding: 5vh 0 0 5vw;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    
+    color: white;
+
+    .big-header {
+        font-size: 5em;
+        line-height: 2em;
+    }
+
+    .small-header {
+        font-size: 1.75em;
+        font-weight: 300;
+        line-height: 1.5em;
+    }
+
+    .desc {
+        padding-top: 5vh;
+        font-size: 1.15em;
+        font-weight: 100;
+    }
+}

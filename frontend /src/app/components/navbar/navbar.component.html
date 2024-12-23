@@ -1,0 +1,19 @@
+<div id="navbar">
+    <span id="header" (click)="goTo('/home')">
+        EvtMgt
+    </span>
+    <span id="links">
+        <span class="link" [ngClass]="{ 'active': activePage === 'events'}" (click)="goTo('/events')">
+            <mat-icon [style.visibility]="(activePage === 'events') ? 'visible' : 'hidden'">event</mat-icon>
+            Events
+        </span>
+        <span class="link" [ngClass]="{ 'active': activePage === 'tasks'}" (click)="goTo('/tasks')">
+            <mat-icon [style.visibility]="(activePage === 'tasks') ? 'visible' : 'hidden'">list</mat-icon>
+            Tasks
+        </span>
+        <span class="link" [ngClass]="{ 'active': activePage === 'users'}" (click)="goTo('/users')">
+            <mat-icon [style.visibility]="(activePage === 'users') ? 'visible' : 'hidden'">supervisor_account</mat-icon>
+            Users
+        </span>
+    </span>
+</div>

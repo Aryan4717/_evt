@@ -1,0 +1,27 @@
+::ng-deep {
+    .mat-mdc-dialog-container .mdc-dialog__surface {
+        border-radius: 15px;
+        background-color: rgb(48, 48, 48);
+    }
+}
+
+#edit-event {
+    padding: 15px;
+    color: white;
+    font-family: Roboto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+
+    h2 {
+        width: 100%;
+        padding-bottom: 5px;
+        border-bottom: 1px white solid;
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+<div id="add-event">
+    <h2>Add Event</h2>
+    <mat-form-field>
+        <mat-label>Event Name</mat-label>
+        <input matInput type="text" [(ngModel)]="newEvent.eventName" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput type="datetime-local" [(ngModel)]="newEvent.date" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput type="text" [(ngModel)]="newEvent.location" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Event Description</mat-label>
+        <textarea matInput type="text" [(ngModel)]="newEvent.desc"></textarea>
+    </mat-form-field>
+
+    <button matButton (click)="addEvent()">Add</button>
+</div>

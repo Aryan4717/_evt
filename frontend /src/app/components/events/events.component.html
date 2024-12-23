@@ -1,0 +1,53 @@
+<div id="events">
+    <div id="events-view">
+        <div class="events-list">
+            <span style="display: inline-flex; width: 100%; align-items: center; gap: 10px;">
+                <span style="font-size: 2em;">Events</span>
+                <mat-icon title="Add Event" (click)="addEvent()">add</mat-icon>
+            </span>
+            <div *ngFor="let event of eventsList" class="event" (click)="selectedEvent = event">
+                <div class="top">
+                    <span class="name">{{ event.eventName }}</span>
+                    <span class="location">{{ event.location }}</span>
+                </div>
+                <div class="bottom">
+                    <span class="desc">{{ event.desc }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="show-event">
+            <ng-container *ngIf="!isEmptyObj(selectedEvent); else noEventSelected">
+                <div class="full-view">
+                    <span class="event-name">
+                        <span [title]="selectedEvent.eventName">{{ selectedEvent.eventName }}</span>
+                        <span class="event-actions">
+                            <mat-icon title="Edit Event" (click)="editEvent(selectedEvent)">edit</mat-icon>
+                            <mat-icon title="Delete Event" (click)="delEvent(selectedEvent.id)">delete</mat-icon>
+                        </span>
+                    </span>
+                    <span class="event-date">
+                        Date: {{ selectedEvent.date | date : "medium" }}
+                    </span>
+                    <span class="event-venue">
+                        Venue: {{ selectedEvent.location }}
+                    </span>
+                    <div class="event-desc">
+                        {{ selectedEvent.desc }}
+                    </div>
+                    <div class="event-attendees">
+                        <span>Attendees</span>
+                        <span class="attendee" *ngFor="let attendee of selectedEvent.attendees">
+                            {{ attendee }}
+                        </span>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #noEventSelected>
+                <div>
+                    Select an event for a full view.
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
